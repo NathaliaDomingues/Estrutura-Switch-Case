@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Switch-Case</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+            background-color: rgb(222, 216, 135);
+        }
+
+        img{
+            max-width: 200px;
+            max-height: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+<h2>Selecione o Dia da Semana:</h2>
+
+<select name="" id="diaSemana" onchange="mostrarMensagem()">
+<option value="default">Selecione um dia</option>
+<option value="segunda">Segunda-Feira</option>
+<option value="terca">Terça-Feira</option>
+<option value="quarta">Quarta-Feira</option>
+<option value="quinta">Quinta-Feira</option>
+<option value="sexta">Sexta-Feira</option>
+<option value="sabado">Sábado</option>
+<option value="domingo">Domingo</option>
+</select>
+
+<div id="mensagem"></div>
+
+<script>
+
+function mostrarMensagem(){
+var select = document.getElementById('diaSemana');
+var diaSelecionado = select.value;
+var mensagemElemento = document.getElementById('mensagem');
+var mensagem = "";
+var imagem = "";
+
+switch (diaSelecionado){
+case "segunda": 
+mensagem = "O inferno só tá começando";
+imagem = "https://media0.giphy.com/media/3oriNSf2iLjMVO7dao/giphy.gif?cid=6c09b9521l2swr22mwrxyph9z2zi2rbxw19ofbz480dlzh1q&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g";
+break;
+
+case "terca": 
+mensagem = "BOOM DIIA!";
+imagem = "https://miro.medium.com/v2/resize:fit:600/1*SjzzNyo-pBCBq1iQZkoauA.jpeg";
+break;
+
+case "quarta":
+mensagem = "Socorro";
+imagem = "https://i.pinimg.com/736x/b5/1d/b6/b51db60c80ea4738af0ebbe357d76004.jpg";
+break;
+
+case "quinta":
+mensagem = "Falta dois dias";
+imagem = "https://media1.giphy.com/media/9iBIdXITr6LoVf8XgY/giphy.webp?cid=790b7611repwc0ab5iu2wil3kmgll2duh51mugtb8r2atysy&ep=v1_gifs_search&rid=giphy.webp&ct=g";
+break;
+
+case "sexta":
+mensagem = "Sextouu";
+imagem = "https://gifdb.com/images/high/funny-kermit-relaxing-4u7kwr40u41e9ukh.gif";
+break;
+
+case "sabado":
+mensagem = "Sabadouu";
+imagem = "https://64.media.tumblr.com/6d22aea8bcba576bbc6e15bc041c2f22/tumblr_pdc2i4bjrd1sg0xfm_1280.jpg";
+break;
+default:
+case "domingo":
+mensagem = "Depressâo";
+imagem = "https://pbs.twimg.com/media/D4psK19UEAA8sRl.jpg";
+}
+
+mensagemElemento.innerHTML = "<p>" + mensagem + "</p>";
+if (imagem !== ""){
+mensagemElemento.innerHTML += "<img src='" + imagem + "' alt='Imagem do dia selecionado'>";
+
+}
+    }
+
+</script>
+
+</body>
+</html>
